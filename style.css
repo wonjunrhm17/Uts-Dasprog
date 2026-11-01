@@ -1,0 +1,231 @@
+/* UTS Dasar-Dasar Pemrograman: silakan ubah gaya sesuai karakter Anda. */
+:root {
+  --utama: #FB6F92;
+  --aksen: #f0ad4e;
+  --latar: #FFE5EC;
+  --teks: #FF8FAB;
+  --putih: #ffffff;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: Geometric, Humanist;
+  color: var(--teks);
+  line-height: 1.7;
+}
+a {
+  color: var(--utama);
+}
+.container {
+  width: min(100% - 40px, 1050px);
+  margin: auto;
+}
+.header {
+  background: var(--putih);
+  border-bottom: 1px solid #dce6eb;
+}
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0;
+}
+.logo {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 19px;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+nav a {
+  text-decoration: none;
+  font-size: 14px;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+.hero {
+  background: linear-gradient(120deg, #e5f3f7, #fdf6e9);
+  padding: 80px 0;
+}
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+.avatar {
+  width: 190px;
+  height: 190px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--utama);
+  color: white;
+  font-size: 64px;
+  font-weight: bold;
+  border: 8px solid white;
+  box-shadow: 0 10px 25px #245c7325;
+}
+.eyebrow {
+  margin-bottom: 0;
+  font-weight: bold;
+  color: var(--utama);
+}
+h1 {
+  margin: 0;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.2;
+}
+.subtitle {
+  font-size: 20px;
+  color: var(--utama);
+  font-weight: bold;
+}
+.button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 11px 22px;
+  background: var(--utama);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+.button:hover {
+  background: #164256;
+}
+.section {
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+.section h2 {
+  margin: 0;
+  color: var(--utama);
+  font-size: 29px;
+}
+.section-intro {
+  margin-top: 5px;
+  margin-bottom: 26px;
+}
+.section-soft {
+  background: var(--latar);
+}
+.card {
+  background: var(--putih);
+  padding: 26px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px #20304012;
+}
+.card h3 {
+  color: var(--utama);
+  margin-top: 0;
+}
+.card h3:not(:first-child) {
+  margin-top: 26px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.quote {
+  border-left: 6px solid var(--aksen);
+  padding: 12px 24px;
+  background: var(--latar);
+  font-size: 20px;
+}
+.footer {
+  background: var(--utama);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .nav-wrap,
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero {
+    padding: 45px 0;
+  }
+  .avatar {
+    width: 140px;
+    height: 140px;
+    font-size: 45px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .section {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+}
+
+/* Biodata di kiri dan foto di kanan */
+
+.biodata-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px;
+  background-color: #f4f8fa;
+  border-radius: 12px;
+}
+
+.biodata-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.tabel-biodata {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabel-biodata th,
+.tabel-biodata td {
+  padding: 9px 6px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #dce8ed;
+  font-size: 14px;
+}
+
+.tabel-biodata th {
+  width: 125px;
+  font-weight: 600;
+}
+
+.tabel-biodata td:nth-child(2) {
+  width: 12px;
+}
+
+.biodata-foto img {
+  width: 200px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Tampilan layar kecil */
+@media (max-width: 600px) {
+  .biodata-container {
+    flex-direction: column-reverse;
+  }
+
+  .biodata-foto {
+    align-self: center;
+  }
+}
